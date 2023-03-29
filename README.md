@@ -2,7 +2,7 @@
 
 ## Intro
 
-This repo contains the code for a public facing map showing [OP/TIL](https://www.cultuuroptil.be/) funded projects, and a map for internal use by OP/TIL to show the overlap in intermunicipal cultural collaborations in Flanders.
+This repo contains the code for a map for internal use by OP/TIL to visualise the overlap in intermunicipal cultural collaborations in Flanders.
 
 ## Developing
 
@@ -48,6 +48,33 @@ You can preview the production build with `npm run preview`.
 
 > To deploy your app to services like Netlify and Vercel, you may need to install an [adapter](https://kit.svelte.dev/docs/adapters) for your target environment.
 
+If the map will not be served from the root of a domain, you need to set the path in [svelte.config.js](svelte.config.js):
+
+```
+import adapter from '@sveltejs/adapter-static';
+
+const config = {
+	kit: {
+		adapter: adapter(),
+		paths: {base: '/path/to/your/app'}
+	}
+};
+
+export default config;
+
+```
+
+In that case, all internal links and links to assets like images need to be prepended with this path:
+
+```
+<script>
+	import { base } from '$app/paths';
+</script>
+
+<img src={`${base}/icons/home.svg`} width="20px" height="20px" />
+
+```
+
 ## Source data
 
 ### Geodata
@@ -58,15 +85,9 @@ The topojson should then be saved as [src/lib/data/munis_simple_nodata_topo.json
 
 ### Google Sheets data
 
-The maps in this repository fetch data from 3 sheets from the [OpTil kaartdata](https://docs.google.com/spreadsheets/d/1lAygI1PiNQRWLjN0TdzMKppKkeFQN5L00_iL1nDa4qw/edit#gid=0) Google Sheet. This Sheet is public (anyone with the link can view), but can only be edited by people from OP/TIL.
+The maps in this repository fetch data from a sheet from the [OpTil kaartdata](https://docs.google.com/spreadsheets/d/1lAygI1PiNQRWLjN0TdzMKppKkeFQN5L00_iL1nDa4qw/edit#gid=0) Google Sheet. This Sheet is public (anyone with the link can view), but can only be edited by people from OP/TIL.
 
-The 3 sheets are:
-
-- `projecten`: contains the data of the projects that are shown on the public facing map. The `Coords` column of this sheet contains a formula to geocode the columns `Adres` and `Gemeente`, which are split into the `Latitude` and `Longitude`columns.
-- `igsdata`: contains the detailed data for all the IGS's ('Intergemeentelijke Samenwerkingsverbanden'). This data is used in the popups for the municipalities in the public facing map.
-- `gemeentedata`: contains the data about which intermunicipal cooperation a municipality is part of. This data is used in the internal map.
-
-These sheets are fetched each time the map application is loaded.
+The sheet is called `nieuw_extern_en_intern_gemeentedata`, and it contains the data about which intermunicipal cooperation a municipality is part of. The data from this sheet is fetched each time the map application is loaded.
 
 ## Structure and functionality
 
@@ -74,13 +95,11 @@ The maps are a [SvelteKit](https://kit.svelte.dev/) app. The main application li
 
 The app has only one route: the root. From here, all the components, the topojson data described above, and the data from the Google Sheets is loaded. All components are in [src/lib/components](src/lib/components).
 
-The map is a full screen SVG, with controls for the layers shown on top of it, with layer controls in the top left (`LayerControls` component for the external map, and `InternLayerControls` for the internal map), and map controls (`MapControls`) in the top right.
+The map is a full screen SVG, with controls for the layers shown on top of it, with layer controls in the top left ( `InternLayerControls` component), and map controls (`MapControls`) in the top right.
 
 ### Map layers
 
 The main layer for the map is the `GemeenteLayer` component. It draws the outlines of the municipalities and districts, and reacts to clicks. When a municipality/disctrict is clicked, the `activeGemeente` variable is set to the data of the clicked municipality, and the `showInfo` variable is set to `true`. Depending on the value of `mapType` ("extern" or "intern"), this will show the relevant information with either the `GemeenteInfo`or the `GemeenteScenarioInfo` components.
-
-The `ProjectLayer` is only shown on the public facing map, and shows a red dot for each of the projects in the data loaded from the `projecten` tab in the Google Sheet. Clicking on a project opens a `ProjectInfo` popup for the clicked project.
 
 The `MergedLayer`component is meant to be used together with the `getMergedData()` utility function. `getMergedData()`takes the data for the municipalities/districts (in topoJSON format) and merges the geographic features based on common values for the `mergeProperty` parameter. For example, the municipalities/districts can be merged into provinces with 
 
@@ -92,7 +111,7 @@ Here, `vlagem` is the topoJSON containing the boundaries of the municipalities, 
 
 `getMergedData()` also returns the centroid of each polygon, which is used by the `MergedLabelLayer` to render the names of the merged polygons.
 
-The `GemeenteLabelLayer` component shows the names of the municipalities/disctricts. On the external map, no labels are displayed when the map is zoomed out (or the screen is too small), only the 13 most important cities are shown on intermediate zoom levels, and all labels are shown when the map is sufficiently zoomed in/the screen is wide enough. On the internal map, all labels are displayed when the 'Toon gemeentenamen' checkbox is checked.
+The `GemeenteLabelLayer` component shows the names of the municipalities/disctricts. All labels are displayed when the 'Toon gemeentenamen' checkbox is checked in the layer controls.
 
 ### Map controls
 
@@ -106,11 +125,7 @@ The `MapControls` component has buttons for:
 
 Panning the map is done by click-dragging (click and hold, then move).
 
-### Layer controls external map
-
-WAIT FOR INPUT ON START DATES
-
-### Layer controls internal map
+### Layer controls
 
 The layer controls of the internal map (`InternLayerControls` component) has the following controls:
 
