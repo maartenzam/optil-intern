@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8" />
+		<link rel="icon" href="/vis/optil/favicon.png" />
+		<meta name="viewport" content="width=device-width" />
+		<meta http-equiv="content-security-policy" content="">
+		<link href="/vis/optil/_app/immutable/assets/_page-7cf5cb8c.css" rel="stylesheet">
+		<link rel="modulepreload" href="/vis/optil/_app/immutable/start-7edf7352.js">
+		<link rel="modulepreload" href="/vis/optil/_app/immutable/chunks/index-a2748b6e.js">
+		<link rel="modulepreload" href="/vis/optil/_app/immutable/chunks/singletons-31460264.js">
+		<link rel="modulepreload" href="/vis/optil/_app/immutable/chunks/paths-6c2b39f0.js">
+		<link rel="modulepreload" href="/vis/optil/_app/immutable/components/layout.svelte-c63dc59b.js">
+		<link rel="modulepreload" href="/vis/optil/_app/immutable/modules/pages/_layout.js-9cbb603b.js">
+		<link rel="modulepreload" href="/vis/optil/_app/immutable/chunks/_layout-da46b06b.js">
+		<link rel="modulepreload" href="/vis/optil/_app/immutable/components/pages/_page.svelte-0e88f32f.js"><!-- HEAD_svelte-oiopqz_START --><style>@font-face {
+			font-family: 'DrukWide';
+			src: url('fonts/DrukWide/DrukWide-Medium.otf') format('opentype');
+		}
+		@font-face {
+			font-family: 'Helvetica';
+			src: url('fonts/Helvetica/Linotype - HelveticaNeueLTStd-Md.otf') format('opentype');
+		}
+		@font-face {
+			font-family: 'Clearface';
+			src: url('fonts/Clearface/ITC - ClearfaceStd-Bold.woff');
+		}
+	</style><!-- HEAD_svelte-oiopqz_END -->
+	</head>
+	<body data-sveltekit-preload-data="hover">
+		<div style="display: contents">
+
+
+
+
+
+<div class="map-container svelte-c53cxa"><svg id="map" transform="translate(0,0)" class="svelte-c53cxa" style="cursor: default;"><g class="gemeente-polys">
+
+</g>
+
+			<g class="provincie-polys svelte-c53cxa">
+
+
+
+</g>
+
+			
+
+			
+
+			
+
+			
+
+			
+
+<g class="gemeente-labels"></g>
+
+			</svg></div>
+
+
+
+<div class="controls svelte-8smrcn"><div class="zoom-controls svelte-8smrcn"><button class="zoom in svelte-8smrcn"><img src="/vis/optil/icons/zoomin.svg" width="20px" height="20px" class="svelte-8smrcn"></button>
+		<button class="zoom out svelte-8smrcn"><img src="/vis/optil/icons/zoomout.svg" width="20px" height="20px" class="svelte-8smrcn"></button></div>
+	<div class="home-button"><button class="home svelte-8smrcn" disabled><img src="/vis/optil/icons/home.svg" width="20px" height="20px"></button></div>
+	<div class="download-button"><button class="download svelte-8smrcn"><img src="/vis/optil/icons/download.svg" width="20px" height="20px"></button></div>
+	<div class="table-button"><button class="table svelte-8smrcn"><img src="/vis/optil/icons/table.svg" width="20px" height="20px"></button></div>
+</div>
+
+	
+
+<div class="marker-filter-container svelte-fr8yin"><input class="styled-checkbox svelte-fr8yin" id="styled-checkbox-labels" type="checkbox">
+	<label for="styled-checkbox-labels" class="svelte-fr8yin" style="background-color: white; color: black;">Toon naam samenwerkingen</label>
+	<input class="styled-checkbox svelte-fr8yin" id="styled-checkbox-namen" type="checkbox">
+<label for="styled-checkbox-namen" class="svelte-fr8yin" style="background-color: white; color: black;">Toon gemeentenamen</label>
+
+
+
+<div style="display: contents; --height:34px; --padding:6px; --border-radius:2px; --font-size:14px;">
+
+<div class="svelte-select  svelte-tyxmms" style="">
+
+    <span aria-live="polite" aria-atomic="false" aria-relevant="additions text" class="a11y-text svelte-tyxmms"></span>
+
+    <div class="prepend svelte-tyxmms"></div>
+
+    <div class="value-container svelte-tyxmms">
+
+        <input autocapitalize="none" autocomplete="off" autocorrect="off" spellcheck="false" tabindex="0" type="text" aria-autocomplete="list" placeholder="Zoek gemeente" style="" class="svelte-tyxmms" value=""></div>
+
+    <div class="indicators svelte-tyxmms">
+
+        
+
+        </div>
+
+    <input type="hidden" class="svelte-tyxmms">
+
+    
+</div></div>
+
+	<ul class="unstyled centered svelte-fr8yin"><li class="svelte-fr8yin"><input class="styled-checkbox svelte-fr8yin" id="styled-checkbox-igs" type="checkbox" value="igs">
+				<label for="styled-checkbox-igs" class="svelte-fr8yin" style="background-color: #BAB0AC;">igs
+					</label>
+			</li><li class="svelte-fr8yin"><input class="styled-checkbox svelte-fr8yin" id="styled-checkbox-uitpas" type="checkbox" value="uitpas">
+				<label for="styled-checkbox-uitpas" class="svelte-fr8yin" style="background-color: #4E79A7;">
+					uitpas <svg width="50px" height="20px" style="float: right;"><defs><pattern id="uitpas" patternUnits="userSpaceOnUse" width="20" height="20" patternTransform="scale(0.75) rotate(0)"><path d="M 10,0 V 20 Z" stroke-width="1.5" stroke="#4E79A7" fill="none"></path></pattern></defs><rect width="50" height="20" fill="white"></rect><rect width="50" height="20" fill="url('#uitpas')"></rect></svg></label>
+			</li><li class="svelte-fr8yin"><input class="styled-checkbox svelte-fr8yin" id="styled-checkbox-bibnetwerk" type="checkbox" value="bibnetwerk">
+				<label for="styled-checkbox-bibnetwerk" class="svelte-fr8yin" style="background-color: #F28E2B;">
+					bibnetwerk <svg width="50px" height="20px" style="float: right;"><defs><pattern id="bibnetwerk" patternUnits="userSpaceOnUse" width="20" height="20" patternTransform="scale(0.75) rotate(0)"><path d="M 0,10 H 20 Z" stroke-width="1.5" stroke="#F28E2B" fill="none"></path></pattern></defs><rect width="50" height="20" fill="white"></rect><rect width="50" height="20" fill="url('#bibnetwerk')"></rect></svg></label>
+			</li><li class="svelte-fr8yin"><input class="styled-checkbox svelte-fr8yin" id="styled-checkbox-erfgoedcel" type="checkbox" value="erfgoedcel">
+				<label for="styled-checkbox-erfgoedcel" class="svelte-fr8yin" style="background-color: #76B7B2;">
+					erfgoedcel <svg width="50px" height="20px" style="float: right;"><defs><pattern id="erfgoedcel" patternUnits="userSpaceOnUse" width="20" height="20" patternTransform="scale(0.75) rotate(45)"><path d="M 10,0 V 20 Z" stroke-width="1.5" stroke="#76B7B2" fill="none"></path></pattern></defs><rect width="50" height="20" fill="white"></rect><rect width="50" height="20" fill="url('#erfgoedcel')"></rect></svg></label>
+			</li><li class="svelte-fr8yin"><input class="styled-checkbox svelte-fr8yin" id="styled-checkbox-ioed" type="checkbox" value="ioed">
+				<label for="styled-checkbox-ioed" class="svelte-fr8yin" style="background-color: #59A14F;">
+					ioed <svg width="50px" height="20px" style="float: right;"><defs><pattern id="ioed" patternUnits="userSpaceOnUse" width="20" height="20" patternTransform="scale(0.75) rotate(-45)"><path d="M 10,0 V 20 Z" stroke-width="1.5" stroke="#59A14F" fill="none"></path></pattern></defs><rect width="50" height="20" fill="white"></rect><rect width="50" height="20" fill="url('#ioed')"></rect></svg></label>
+			</li><li class="svelte-fr8yin"><input class="styled-checkbox svelte-fr8yin" id="styled-checkbox-ccnetwerk" type="checkbox" value="ccnetwerk">
+				<label for="styled-checkbox-ccnetwerk" class="svelte-fr8yin" style="background-color: #EDC948;">
+					ccnetwerk <svg width="50px" height="20px" style="float: right;"><defs><pattern id="ccnetwerk" patternUnits="userSpaceOnUse" width="20" height="20" patternTransform="scale(0.75) rotate(0)"><path d="M 1,0 V 20 Z" stroke-width="1.5" stroke="#EDC948" fill="none"></path></pattern></defs><rect width="50" height="20" fill="white"></rect><rect width="50" height="20" fill="url('#ccnetwerk')"></rect></svg></label>
+			</li><li class="svelte-fr8yin"><input class="styled-checkbox svelte-fr8yin" id="styled-checkbox-sportnetwerk" type="checkbox" value="sportnetwerk">
+				<label for="styled-checkbox-sportnetwerk" class="svelte-fr8yin" style="background-color: #B07AA1;">
+					sportnetwerk <svg width="50px" height="20px" style="float: right;"><defs><pattern id="sportnetwerk" patternUnits="userSpaceOnUse" width="20" height="20" patternTransform="scale(0.75) rotate(-45)"><path d="M 1,0 V 20 Z" stroke-width="1.5" stroke="#B07AA1" fill="none"></path></pattern></defs><rect width="50" height="20" fill="white"></rect><rect width="50" height="20" fill="url('#sportnetwerk')"></rect></svg></label>
+			</li><li class="svelte-fr8yin"><input class="styled-checkbox svelte-fr8yin" id="styled-checkbox-jeugdnetwerk" type="checkbox" value="jeugdnetwerk">
+				<label for="styled-checkbox-jeugdnetwerk" class="svelte-fr8yin" style="background-color: #FF9DA7;">
+					jeugdnetwerk <svg width="50px" height="20px" style="float: right;"><defs><pattern id="jeugdnetwerk" patternUnits="userSpaceOnUse" width="20" height="20" patternTransform="scale(0.75) rotate(45)"><path d="M 1,0 V 20 Z" stroke-width="1.5" stroke="#FF9DA7" fill="none"></path></pattern></defs><rect width="50" height="20" fill="white"></rect><rect width="50" height="20" fill="url('#jeugdnetwerk')"></rect></svg></label>
+			</li><li class="svelte-fr8yin"><input class="styled-checkbox svelte-fr8yin" id="styled-checkbox-avansa" type="checkbox" value="avansa">
+				<label for="styled-checkbox-avansa" class="svelte-fr8yin" style="background-color: #9C755F;">
+					avansa <svg width="50px" height="20px" style="float: right;"><defs><pattern id="avansa" patternUnits="userSpaceOnUse" width="20" height="20" patternTransform="scale(0.75) rotate(0)"><path d="M 0,1 H 20 Z" stroke-width="1.5" stroke="#9C755F" fill="none"></path></pattern></defs><rect width="50" height="20" fill="white"></rect><rect width="50" height="20" fill="url('#avansa')"></rect></svg></label>
+			</li><li class="svelte-fr8yin"><input class="styled-checkbox svelte-fr8yin" id="styled-checkbox-regio" type="checkbox" value="regio">
+				<label for="styled-checkbox-regio" class="svelte-fr8yin" style="background-color: #E15759;">regio
+					</label>
+			</li></ul>
+	
+</div>
+
+
+
+
+
+
+		<script type="module" data-sveltekit-hydrate="1nsb7cs">
+			import { start } from "/vis/optil/_app/immutable/start-7edf7352.js";
+
+			start({
+				assets: "/vis/optil",
+				env: {},
+				target: document.querySelector('[data-sveltekit-hydrate="1nsb7cs"]').parentNode,
+				version: "1680090227445",
+				hydrate: {
+					node_ids: [0, 2],
+					data: [null,null],
+					form: null,
+					error: null
+				}
+			});
+		</script>
+	</div>
+	</body>
+</html>
