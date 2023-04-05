@@ -1,4 +1,4 @@
-# OP/TIL internal and public facing maps
+# OP/TIL internal map
 
 ## Intro
 
