@@ -53,7 +53,8 @@
 
 // Tableau 10
 export const colorScale = {
-    igs: '#BAB0AC',
+    igs_bolo_cultuur: '#BAB0AC',
+    igs_cultuur: '#123456',
     uitpas: '#4E79A7',
     bibnetwerk: '#F28E2B',
     erfgoedcel: '#76B7B2',

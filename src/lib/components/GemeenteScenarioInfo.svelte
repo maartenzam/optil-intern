@@ -33,7 +33,8 @@ The ScenarioSelect component is a dropdown to assign a municipality to a differe
 	<button class="close-button" on:click={() => handleClick()}>X</button>
 	<h3>{activeGemeente.properties.naam}</h3>
 
-    <ScenarioSelect {activeGemeente} laag='igs'></ScenarioSelect>
+    <ScenarioSelect {activeGemeente} laag='igs_bolo_cultuur'></ScenarioSelect>
+	<ScenarioSelect {activeGemeente} laag='igs_cultuur'></ScenarioSelect>
     <ScenarioSelect {activeGemeente} laag='uitpas'></ScenarioSelect>
     <ScenarioSelect {activeGemeente} laag='bibnetwerk'></ScenarioSelect>
     <ScenarioSelect {activeGemeente} laag='erfgoedcel'></ScenarioSelect>

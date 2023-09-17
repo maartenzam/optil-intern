@@ -1,7 +1,8 @@
 import { writable } from 'svelte/store';
 
 export const scenarios = writable({
-    igs: [],
+    igs_bolo_cultuur: [],
+    igs_cultuur: [],
     uitpas: [],
     bibnetwerk: [],
     erfgoedcel: [],

@@ -70,7 +70,7 @@
 		// getMergedData returns the geojson of gemeente features merged on some property in gemeente.properties
 		provincies = getMergedData(vlagem, 'provinciecode', []);
 		regios = getMergedData(vlagem, 'regio', []);
-		igsen = getMergedData(vlagem, 'igs', []);
+		igsen = getMergedData(vlagem, 'igs_bolo_cultuur', []);
 
 		// dataReady is used to only render things when all the data is fetched from Google Sheets, and processed
 		dataReady = true;
@@ -137,7 +137,8 @@
 	// The layer(s) shown on the internal map, edit to change the default layer(s) shown
 	let selectedLagen = [];
 	let selectedCoops = {
-		igs: [],
+		igs_bolo_cultuur: [],
+		igs_cultuur: [],
 		uitpas: [],
 		bibnetwerk: [],
 		erfgoedcel: [],
