@@ -63,7 +63,8 @@ export const colorScale = {
     sportnetwerk: '#B07AA1',
     jeugdnetwerk: '#FF9DA7',
     avansa: '#9C755F',
-    regio: '#E15759'
+    regio: '#E15759',
+    regioconsulent: "#499894"
 }
 
 export const patternScale = {
@@ -74,5 +75,6 @@ export const patternScale = {
     ccnetwerk: {path: "M 1,0 V 20 Z", rotation: 0},
     sportnetwerk: {path: "M 1,0 V 20 Z", rotation: -45},
     jeugdnetwerk: {path: "M 1,0 V 20 Z", rotation: 45},
-    avansa: {path: "M 0,1 H 20 Z", rotation: 0}
+    avansa: {path: "M 0,1 H 20 Z", rotation: 0},
+    regioconsulent: {path: "M 0,5 H 20 Z", rotation: 0}
 }

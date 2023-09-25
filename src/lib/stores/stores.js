@@ -11,7 +11,8 @@ export const scenarios = writable({
     sportnetwerk: [],
     jeugdnetwerk: [],
     avansa: [],
-    regio: []
+    regio: [],
+    regioconsulent: []
 })
 
 export const probleemgemeenten = writable([])

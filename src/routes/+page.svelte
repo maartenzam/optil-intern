@@ -147,7 +147,8 @@
 		sportnetwerk: [],
 		jeugdnetwerk: [],
 		avansa: [],
-		regio: []
+		regio: [],
+		regioconsulent: []
 	};
 </script>
 

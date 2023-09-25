@@ -44,6 +44,7 @@ The ScenarioSelect component is a dropdown to assign a municipality to a differe
     <ScenarioSelect {activeGemeente} laag='jeugdnetwerk'></ScenarioSelect>
 	<ScenarioSelect {activeGemeente} laag='avansa'></ScenarioSelect>
 	<ScenarioSelect {activeGemeente} laag='regio'></ScenarioSelect>
+	<ScenarioSelect {activeGemeente} laag='regioconsulent'></ScenarioSelect>
 
 	<ProbleemGemeenteCheckbox niscode={activeGemeente.properties.niscode}></ProbleemGemeenteCheckbox>
 
