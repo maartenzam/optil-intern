@@ -2,10 +2,10 @@
     import ScenarioSelect from '$lib/components/ScenarioSelect.svelte';
 	import ProbleemGemeenteCheckbox from './ProbleemGemeenteCheckbox.svelte';
 	export let activeGemeente;
-	export let clickPosition;
+	//export let clickPosition;
 	export let showInfo;
-	export let w;
-	export let h;
+	//export let w;
+	//export let h;
 
 	function handleClick() {
 		showInfo = false;
@@ -21,14 +21,17 @@ This component shows a popup on top of the internal map when the user clicks on 
 The ScenarioSelect component is a dropdown to assign a municipality to a different intermunicipal cooperation
 -->
 
+	<!--style:left={clickPosition[0] < w - 380 ? clickPosition[0] + 30 + 'px' : 'auto'}
+    style:right={clickPosition[0] > w - 380 ? w - clickPosition[0] + 30 + 'px' : 'auto'}
+	style:top={clickPosition[1] < h - 400 ? clickPosition[1] + 'px' : 'auto'}
+    style:bottom={clickPosition[1] > h - 400 ? h - clickPosition[1] + 'px' : 'auto'}-->
+
 <div class="background-layer" on:click={() => handleClick()}></div>
 
 <div
 	class="gemeente-info"
-	style:left={clickPosition[0] < w - 380 ? clickPosition[0] + 30 + 'px' : 'auto'}
-    style:right={clickPosition[0] > w - 380 ? w - clickPosition[0] + 30 + 'px' : 'auto'}
-	style:top={clickPosition[1] < h - 400 ? clickPosition[1] + 'px' : 'auto'}
-    style:bottom={clickPosition[1] > h - 400 ? h - clickPosition[1] + 'px' : 'auto'}
+	style:left={'50%'}
+	style:top={'50%'}
 >
 	<button class="close-button" on:click={() => handleClick()}>X</button>
 	<h3>{activeGemeente.properties.naam}</h3>
@@ -66,6 +69,7 @@ The ScenarioSelect component is a dropdown to assign a municipality to a differe
 		padding: 8px;
 		max-width: 350px;
 		box-shadow: 0px 3px 15px rgba(0, 0, 0, 0.2);
+		transform: translate(-50%, -50%);
 	}
 	.close-button {
 		position: absolute;

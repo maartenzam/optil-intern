@@ -36,7 +36,7 @@ Object.keys($scenarios).forEach(laag => {
 @component
 This component is a dropdown to be used in the GemeenteScenarioInfo component, to let the user assign a municipality to a different intermunicipal cooperation.
 -->
-
+<div class="row-container">
 <label for={'select-' + laag}>{laag + ": "}</label>
 <select
     id={'select-' + laag}
@@ -48,10 +48,18 @@ This component is a dropdown to be used in the GemeenteScenarioInfo component, t
         <option value={option.value}>{option.label}</option>
     {/each}
 </select>
+</div>
 
 <style>
+    .row-container {
+        display: flex;
+    }
+    label {
+        flex: 1;
+        width: 200px;
+    }
     select {
-        width: 100%;
+        width: 200px;
         margin-bottom: 8px;
     }
     select.edited {
