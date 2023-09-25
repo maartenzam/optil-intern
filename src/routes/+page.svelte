@@ -220,6 +220,7 @@
 							strokeWidth={2}
 							fillOpacity={0.3}
 							{laag}
+							{igsdata}
 						/>
 					{/each}
 				</g>
@@ -274,6 +275,7 @@
 							{projection}
 							colour={colorScale[laag]}
 							{laag}
+							{igsdata}
 						/>
 					{/each}
 				</g>

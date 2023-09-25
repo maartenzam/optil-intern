@@ -20,7 +20,7 @@ This component renders a map layer with the names of intermunicipal cooperations
     y={projection(regioLabel.centroid)[1]}
     text-anchor={'middle'}
     style:font-family={'Helvetica'}
-    style:fill={igsdata ?  igsdata.find((d) => d.igs == regioLabel.id).colour : colour}
+    style:fill={igsdata && laag == "igs_bolo_cultuur" ?  igsdata.find((d) => d.igs == regioLabel.id).colour : colour}
     transition:fade>{regioLabel.id}</text
 >
 {/each}
