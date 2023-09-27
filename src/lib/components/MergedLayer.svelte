@@ -18,14 +18,14 @@
 This component renders a map layer with intermunicipal cooperations.
 -->
 
-{#if !['igs_bolo_cultuur', 'igs_cultuur', 'regio', 'provincies'].includes(laag)}
+{#if !['igs_bolo_cultuur', 'regio', 'provincies'].includes(laag)}
 	<defs>
 		<Pattern {laag}></Pattern>
 	</defs>
 {/if}
 
 {#each features as feature}
-	{#if (laag == 'igs_bolo_cultuur' || laag == 'igs_cultuur') && !igsdata}
+	{#if 'igs_bolo_cultuur' && !igsdata}
 		<path
 			d={path(feature)}
 			fill={fill}

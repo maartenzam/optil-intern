@@ -61,10 +61,10 @@ This component is the UI for controlling which layers are visible on the interna
           for={"styled-checkbox-" + laag}
           style:background-color={colorScale[laag]}
         >
-          {#if laag == "igs_bolo_cultuur" || laag == "igs_cultuur" || laag == "regio"}
+          {#if laag == "igs_bolo_cultuur" || laag == "regio"}
             {laag}
           {/if}
-          {#if laag != "igs_bolo_cultuur" && laag != "igs_cultuur" && laag != "regio"}
+          {#if laag != "igs_bolo_cultuur" && laag != "regio"}
             {laag}
             <svg width="50px" height="20px" style:float={"right"}>
               <defs>

@@ -68,8 +68,9 @@ export const colorScale = {
 }
 
 export const patternScale = {
+    igs_cultuur: {path: "M 0,10 H 20 Z", rotation: 0},
     uitpas: {path: "M 10,0 V 20 Z", rotation: 0},
-    bibnetwerk: {path: "M 0,10 H 20 Z", rotation: 0},
+    bibnetwerk: {path: "M 5,0 V 20 Z", rotation: 0},
     erfgoedcel: {path: "M 10,0 V 20 Z", rotation: 45},
     ioed: {path: "M 10,0 V 20 Z", rotation: -45},
     ccnetwerk: {path: "M 1,0 V 20 Z", rotation: 0},
