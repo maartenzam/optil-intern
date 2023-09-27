@@ -12,6 +12,12 @@
 		activeGemeente = null;
 	}
 
+	let windowMoved = false;
+
+	function toggleWindowMoved(){
+		windowMoved = !windowMoved;
+	}
+
 </script>
 
 <!--
@@ -31,8 +37,13 @@ The ScenarioSelect component is a dropdown to assign a municipality to a differe
 <div
 	class="gemeente-info"
 	style:left={'50%'}
-	style:top={'50%'}
+	style:top={windowMoved ? 'auto' : '50%'}
+	style:bottom={windowMoved ? '0px' : 'auto'}
+	style:transform={windowMoved ? 'translate(-50%, 90%)' : 'translate(-50%, -50%)'}
 >
+<div class="button-container" style:visibility={windowMoved ? 'visible' : 'hidden'}>
+	<button class={"move-toggle"} on:click={() => toggleWindowMoved()}>&#8679;</button>
+</div>
 	<button class="close-button" on:click={() => handleClick()}>X</button>
 	<h3>{activeGemeente.properties.naam}</h3>
 
@@ -50,6 +61,10 @@ The ScenarioSelect component is a dropdown to assign a municipality to a differe
 	<ScenarioSelect {activeGemeente} laag='regioconsulent'></ScenarioSelect>
 
 	<ProbleemGemeenteCheckbox niscode={activeGemeente.properties.niscode}></ProbleemGemeenteCheckbox>
+	<div class="button-container" style:visibility={windowMoved ? 'hidden' : 'visible'}>
+		<button class={"move-toggle"} on:click={() => toggleWindowMoved()}>&#8681;</button>
+	</div>
+	
 
 </div>
 
@@ -69,7 +84,7 @@ The ScenarioSelect component is a dropdown to assign a municipality to a differe
 		padding: 8px;
 		max-width: 350px;
 		box-shadow: 0px 3px 15px rgba(0, 0, 0, 0.2);
-		transform: translate(-50%, -50%);
+		transition: transform 0.5s;
 	}
 	.close-button {
 		position: absolute;
@@ -84,4 +99,20 @@ The ScenarioSelect component is a dropdown to assign a municipality to a differe
 	h3 {
 		font-family: 'DrukWide';
 	}
+	.button-container {
+		text-align: center;
+	}
+	button.move-toggle {
+		font-weight: 700;
+		cursor: pointer;
+		border-radius: 10px;
+		border: 1.5px solid #ffffff;
+		background-color: #ffffff;
+		box-shadow: rgba(149, 157, 165, 0.7) 0px 0px 6px;
+	}
+	button.move-toggle:hover {
+		background-color: #eeeeee;
+	}
 </style>
+
+;
