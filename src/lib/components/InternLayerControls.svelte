@@ -14,14 +14,27 @@
   export let activeGemeente;
   export let gemeenten;
   export let showInfo;
+
+  let sidebarCollapsed = false;
+  function toggleSidebar(){
+		sidebarCollapsed = !sidebarCollapsed;
+	}
 </script>
 
 <!--
 @component
 This component is the UI for controlling which layers are visible on the internal map
 -->
-
-<div class="marker-filter-container" transition:fade>
+<div class="button-container uncollapse" style:visibility={sidebarCollapsed ? 'visible' : 'hidden'}>
+  <button class={"sidebar-toggle"} on:click={() => toggleSidebar()}>&#8658;</button>
+</div>
+<div class="marker-filter-container"
+  transition:fade
+  style:left={sidebarCollapsed ? '-270px' : '10px'}
+>
+  <div class="button-container">
+    <button class={"sidebar-toggle"} on:click={() => toggleSidebar()}>&#8656;</button>
+  </div>
   <input
     class="styled-checkbox"
     id={"styled-checkbox-labels"}
@@ -97,10 +110,15 @@ This component is the UI for controlling which layers are visible on the interna
 </div>
 
 <style>
+  .button-container.uncollapse {
+    position: absolute;
+    top: 15px;
+    left: 15px;
+  }
   .marker-filter-container {
     position: absolute;
     top: 10px;
-    left: 10px;
+    transition: left 0.5s;
     background: rgba(255, 255, 255, 0.8);
     padding: 5px;
     border-radius: 2px;
@@ -164,4 +182,14 @@ This component is the UI for controlling which layers are visible on the interna
     width: calc(100% - 8px);
     display: block;
   }
+	button.sidebar-toggle {
+		font-weight: 700;
+		cursor: pointer;
+		border-radius: 4px;
+		border: 1.5px solid #666666;
+		background-color: #ffffff;
+	}
+	button.sidebar-toggle:hover {
+		background-color: #eeeeee;
+	}
 </style>
