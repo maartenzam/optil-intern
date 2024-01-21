@@ -148,7 +148,9 @@
 		jeugdnetwerk: [],
 		avansa: [],
 		regio: [],
-		regioconsulent: []
+		regioconsulent: [],
+		lo_vrijetijdspart: [],
+		bolo_vrijetijdspart: []
 	};
 </script>
 

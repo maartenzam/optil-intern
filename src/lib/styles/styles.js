@@ -64,7 +64,9 @@ export const colorScale = {
     jeugdnetwerk: '#FF9DA7',
     avansa: '#9C755F',
     regio: '#E15759',
-    regioconsulent: "#499894"
+    regioconsulent: "#499894",
+    lo_vrijetijdspart: "#123456",
+    bolo_vrijetijdspart: "#654321"
 }
 
 export const patternScale = {
@@ -77,5 +79,7 @@ export const patternScale = {
     sportnetwerk: {path: "M 1,0 V 20 Z", rotation: -45},
     jeugdnetwerk: {path: "M 1,0 V 20 Z", rotation: 45},
     avansa: {path: "M 0,1 H 20 Z", rotation: 0},
-    regioconsulent: {path: "M 0,5 H 20 Z", rotation: 0}
+    regioconsulent: {path: "M 0,5 H 20 Z", rotation: 0},
+    lo_vrijetijdspart: {path: "M 10,0 V 20 Z", rotation: 0},
+    bolo_vrijetijdspart: {path: "M 5,0 V 20 Z", rotation: 0},
 }
